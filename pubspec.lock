@@ -71,11 +71,36 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
+  date_format:
+    dependency: "direct main"
+    description:
+      name: date_format
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.5"
+  dragable_flutter_list:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "1a38f16971d25e1e2016f43bb9f0c47204dc248a"
+      url: "git://github.com/Realank/dragable_flutter_list"
+    source: git
+    version: "0.1.7"
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_datetime_picker:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "266dff44a8162fd5ecdfcc73d3828a3d1d76124f"
+      url: "git://github.com/Realank/flutter_datetime_picker"
+    source: git
+    version: "0.1.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -381,4 +406,4 @@ packages:
     source: hosted
     version: "2.1.15"
 sdks:
-  dart: ">=2.0.0-dev.68.0 <3.0.0"
+  dart: ">=2.0.0 <3.0.0"
