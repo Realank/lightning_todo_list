@@ -26,6 +26,7 @@ dependencies:
   flutter_datetime_picker:
       git:
         url: git://github.com/Realank/flutter_datetime_picker
+  sqflite:
 
 dev_dependencies:
   flutter_test:

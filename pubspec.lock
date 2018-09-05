@@ -83,10 +83,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "1a38f16971d25e1e2016f43bb9f0c47204dc248a"
+      resolved-ref: "4a2b3dc47ca7c58a73233745c9e03caac81146f7"
       url: "git://github.com/Realank/dragable_flutter_list"
     source: git
-    version: "0.1.7"
+    version: "1.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -97,10 +97,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "266dff44a8162fd5ecdfcc73d3828a3d1d76124f"
+      resolved-ref: fdb42042bb44bd77f418d13a73a57a8c6d43874c
       url: "git://github.com/Realank/flutter_datetime_picker"
     source: git
-    version: "0.1.1"
+    version: "1.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -321,6 +321,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.1"
+  sqflite:
+    dependency: "direct main"
+    description:
+      name: sqflite
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.11.2+2"
   stack_trace:
     dependency: transitive
     description:
@@ -342,6 +349,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  synchronized:
+    dependency: transitive
+    description:
+      name: synchronized
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.5.1+1"
   term_glyph:
     dependency: transitive
     description:

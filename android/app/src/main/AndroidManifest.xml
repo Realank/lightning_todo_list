@@ -14,7 +14,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="lightning_todo_list"
+        android:label="待办事项"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
