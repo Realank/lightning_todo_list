@@ -154,6 +154,7 @@ class _HomePageState extends State<HomePage> {
         print('left $isLeft');
         if (isLeft) {
           item.active = true;
+          todoProvider.update(item);
           setState(() {});
         } else {
           if (item.active) {
