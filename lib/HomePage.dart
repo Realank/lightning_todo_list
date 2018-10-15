@@ -10,11 +10,11 @@ String timeString(DateTime date) {
   final now = DateTime.now();
   if (date.year == now.year && date.month == now.month && date.day == now.day) {
     //today
-    return '今天';
+    return formatDate(date, ['今天', HH, ':', nn]);
   } else if (date.year == now.year) {
-    return formatDate(date, [mm, '月', dd, '日 ']);
+    return formatDate(date, [mm, '月', dd, '日 ', HH, ':', nn]);
   } else {
-    return formatDate(date, [yyyy, '年', mm, '月', dd, '日 ']);
+    return formatDate(date, [yyyy, '年', mm, '月', dd, '日 ', HH, ':', nn]);
   }
 }
 
