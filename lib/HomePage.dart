@@ -10,7 +10,7 @@ String timeString(DateTime date) {
   final now = DateTime.now();
   if (date.year == now.year && date.month == now.month && date.day == now.day) {
     //today
-    return formatDate(date, ['今天', HH, ':', nn]);
+    return formatDate(date, ['今天 ', HH, ':', nn]);
   } else if (date.year == now.year) {
     return formatDate(date, [mm, '月', dd, '日 ', HH, ':', nn]);
   } else {
@@ -55,6 +55,7 @@ class _HomePageState extends State<HomePage> {
 
   void reloadData() {
     todoProvider.getAll().then((List<TodoItem> list) {
+      list.sort((final item1, final item2) => item2.order - item1.order);
       this.list = list;
       setState(() {});
     });
