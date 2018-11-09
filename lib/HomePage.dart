@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
     final currentTime = item.scheduleTime != null ? item.scheduleTime : DateTime.now();
     DatePicker.showDateTimePicker(
       context,
-      locale: 'zh',
+      locale: LocaleType.zh,
       currentTime: currentTime,
       showTitleActions: true,
 //      locale: 'zh',
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
           }
         },
         autofocus: true,
-        decoration: InputDecoration.collapsed(hintText: '请输入内容...'),
+        decoration: InputDecoration.collapsed(hintText: '🖊️...'),
         style: TextStyle(fontSize: 22.0, color: Colors.grey.shade700),
       ),
     );
@@ -220,7 +220,10 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('待办事项'),
+        title: Text(
+          'Flutter Todo',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -231,7 +234,10 @@ class _HomePageState extends State<HomePage> {
             }
           });
         },
-        child: Icon(inputting ? Icons.keyboard_arrow_down : Icons.add),
+        child: Icon(
+          inputting ? Icons.keyboard_arrow_down : Icons.add,
+          color: Colors.white,
+        ),
       ),
       body: Column(
         children: widgets,
