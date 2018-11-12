@@ -66,6 +66,13 @@ packages:
       url: "git://github.com/Realank/flutter_datetime_picker"
     source: git
     version: "1.0.4"
+  flutter_slidable:
+    dependency: "direct main"
+    description:
+      name: flutter_slidable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.9"
   flutter_test:
     dependency: "direct dev"
     description: flutter

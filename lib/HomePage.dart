@@ -4,17 +4,18 @@ import 'package:date_format/date_format.dart';
 import 'package:dragable_flutter_list/dragable_flutter_list.dart';
 import 'DragView.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'dart:math';
 
 String timeString(DateTime date) {
-  final locale = 'zh';
+//  final locale = 'zh';
   final now = DateTime.now();
   if (date.year == now.year && date.month == now.month && date.day == now.day) {
     //today
-    return formatDate(date, ['今天 ', HH, ':', nn]);
+    return formatDate(date, ['Today ', HH, ':', nn]);
   } else if (date.year == now.year) {
-    return formatDate(date, [mm, '月', dd, '日 ', HH, ':', nn]);
+    return formatDate(date, [M, '.', dd, ' ', HH, ':', nn]);
   } else {
-    return formatDate(date, [yyyy, '年', mm, '月', dd, '日 ', HH, ':', nn]);
+    return formatDate(date, [M, '.', dd, ' ', yyyy, ' ', HH, ':', nn]);
   }
 }
 
@@ -28,6 +29,7 @@ class _HomePageState extends State<HomePage> {
   final scrollController = ScrollController();
   final TodoProvider todoProvider = TodoProvider();
   List<TodoItem> list = [];
+  var maxOrderId = -1;
   @override
   void initState() {
     super.initState();
@@ -55,7 +57,12 @@ class _HomePageState extends State<HomePage> {
 
   void reloadData() {
     todoProvider.getAll().then((List<TodoItem> list) {
-      list.sort((final item1, final item2) => item2.order - item1.order);
+      list.sort((final item1, final item2) {
+        final result = item2.order - item1.order;
+        final bigger = result > 0 ? item2.order : item1.order;
+        this.maxOrderId = max(this.maxOrderId, bigger);
+        return result;
+      });
       this.list = list;
       setState(() {});
     });
@@ -71,7 +78,7 @@ class _HomePageState extends State<HomePage> {
     final currentTime = item.scheduleTime != null ? item.scheduleTime : DateTime.now();
     DatePicker.showDateTimePicker(
       context,
-      locale: LocaleType.zh,
+      locale: LocaleType.en,
       currentTime: currentTime,
       showTitleActions: true,
 //      locale: 'zh',
@@ -90,13 +97,13 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildTextField() {
     return Container(
-      key: GlobalKey(),
+//      key: GlobalKey(),
       padding: EdgeInsets.all(10.0) + EdgeInsets.only(top: 10.0),
       child: TextField(
         onSubmitted: (text) {
           print('submit');
           if (text.length > 0) {
-            final item = TodoItem(content: text, order: list.length);
+            final item = TodoItem(content: text, order: max(list.length, this.maxOrderId));
             todoProvider.insert(item).then((index) {
               inputting = false;
               _scrollListToTop();
@@ -151,22 +158,17 @@ class _HomePageState extends State<HomePage> {
 //    trailing.add(Text('order:${item.order}'));
 
     return DragView(
+      isActive: item.active,
       onPanGes: (isLeft) {
         print('left $isLeft');
         if (isLeft) {
-          item.active = true;
+          item.active = !item.active;
           todoProvider.update(item);
           setState(() {});
         } else {
-          if (item.active) {
-            item.active = false;
-            todoProvider.update(item);
-            setState(() {});
-          } else {
-            todoProvider.delete(item.id).then((result) {
-              reloadData();
-            });
-          }
+          todoProvider.delete(item.id).then((result) {
+            reloadData();
+          });
         }
       },
       child: Card(
@@ -235,7 +237,7 @@ class _HomePageState extends State<HomePage> {
           });
         },
         child: Icon(
-          inputting ? Icons.keyboard_arrow_down : Icons.add,
+          inputting ? Icons.cancel : Icons.add,
           color: Colors.white,
         ),
       ),
