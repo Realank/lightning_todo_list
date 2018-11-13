@@ -5,6 +5,7 @@ import 'package:dragable_flutter_list/dragable_flutter_list.dart';
 import 'DragView.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'dart:math';
+import 'notification.dart';
 
 String timeString(DateTime date) {
 //  final locale = 'zh';
@@ -55,6 +56,17 @@ class _HomePageState extends State<HomePage> {
     super.didChangeDependencies();
   }
 
+  void addNotification(TodoItem item) {
+    if (item.scheduleTime != null && item.active) {
+      notificationManager.scheduleNotification(
+          item.id, 'Flutter Todo', item.content, item.scheduleTime);
+    }
+  }
+
+  void cancelNotification(TodoItem item) {
+    notificationManager.cancelNotification(item.id);
+  }
+
   void reloadData() {
     todoProvider.getAll().then((List<TodoItem> list) {
       list.sort((final item1, final item2) {
@@ -87,8 +99,12 @@ class _HomePageState extends State<HomePage> {
       },
       onConfirm: (time) {
         setState(() {
+          if (item.active && item.scheduleTime != null) {
+            cancelNotification(item);
+          }
           item.scheduleTime = time;
           todoProvider.update(item);
+          addNotification(item);
           setState(() {});
         });
       },
@@ -164,8 +180,21 @@ class _HomePageState extends State<HomePage> {
         if (isLeft) {
           item.active = !item.active;
           todoProvider.update(item);
+
+          if (item.scheduleTime != null) {
+            if (item.active) {
+              addNotification(item);
+            } else {
+              print('complete schedule: ${item.content}');
+              cancelNotification(item);
+            }
+          }
           setState(() {});
         } else {
+          //delete
+          if (item.scheduleTime != null && item.active) {
+            cancelNotification(item);
+          }
           todoProvider.delete(item.id).then((result) {
             reloadData();
           });
