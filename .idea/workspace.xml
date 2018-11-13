@@ -6,12 +6,8 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="941384d1-0e96-494a-a0b8-b901eabf3aed" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/screenshot.png" />
+    <list default="true" id="941384d1-0e96-494a-a0b8-b901eabf3aed" name="Default" comment="add readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/lib/HomePage.dart" afterPath="$PROJECT_DIR$/lib/HomePage.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/notification.dart" afterPath="$PROJECT_DIR$/lib/notification.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -550,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542092769661</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add readme">
+      <created>1542099725745</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1542099725745</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -603,7 +606,8 @@
     <MESSAGE value="fix bugs" />
     <MESSAGE value="optimize" />
     <MESSAGE value="add notification" />
-    <option name="LAST_COMMIT_MESSAGE" value="add notification" />
+    <MESSAGE value="add readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="add readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
