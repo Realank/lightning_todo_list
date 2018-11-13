@@ -43,15 +43,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
-  dragable_flutter_list:
+  draggable_flutter_list:
     dependency: "direct main"
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "73eb88e005380d3ddc8013ca46c63d01c8b55133"
-      url: "git://github.com/Realank/dragable_flutter_list"
+      resolved-ref: d91801cab7d398aff37af13a3dc207ddaa5f02c9
+      url: "git://github.com/Realank/draggable_flutter_list"
     source: git
-    version: "1.0.2"
+    version: "1.0.3"
   flutter:
     dependency: "direct main"
     description: flutter

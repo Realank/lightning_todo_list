@@ -20,9 +20,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   date_format: ^1.0.5
-  dragable_flutter_list:
+  draggable_flutter_list:
     git:
-      url: git://github.com/Realank/dragable_flutter_list
+      url: git://github.com/Realank/draggable_flutter_list
   flutter_datetime_picker:
       git:
         url: git://github.com/Realank/flutter_datetime_picker

@@ -44,10 +44,10 @@
             </list>
           </value>
         </entry>
-        <entry key="dragable_flutter_list">
+        <entry key="draggable_flutter_list">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/git/dragable_flutter_list-73eb88e005380d3ddc8013ca46c63d01c8b55133/lib" />
+              <option value="$USER_HOME$/.pub-cache/git/draggable_flutter_list-d91801cab7d398aff37af13a3dc207ddaa5f02c9/lib" />
             </list>
           </value>
         </entry>
@@ -201,7 +201,7 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/git/dragable_flutter_list-73eb88e005380d3ddc8013ca46c63d01c8b55133/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/git/draggable_flutter_list-d91801cab7d398aff37af13a3dc207ddaa5f02c9/lib" />
       <root url="file://$USER_HOME$/.pub-cache/git/flutter_datetime_picker-41bf7792ff5ab471b6b1e4216a334a985fedafb9/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/async-2.0.8/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/boolean_selector-1.0.4/lib" />
