@@ -14,11 +14,12 @@ class _NotificationManager {
   }
 
   Future cancelNotification(int id) async {
+    print('cancel notification id($id)');
     await flutterLocalNotificationsPlugin.cancel(id);
   }
 
   Future scheduleNotification(int id, String title, String body, DateTime when) async {
-    print('add notification $title $body at $when');
+    print('add notification id($id) $title $body at $when');
 
     var androidPlatformChannelSpecifics = new AndroidNotificationDetails(
         'todo noti', 'Todo Notification', 'the notification when todo item scheduled on time',

@@ -251,6 +251,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         title: Text(
           'Flutter Todo',
           style: TextStyle(color: Colors.white),
